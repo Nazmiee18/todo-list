@@ -14,9 +14,9 @@ function TodoProvider({ children }) {
 
   const [isEdit, setIsEdit] = useState('');
 
-  const [isDelete, setIsDelete] = useState('');
+  const [statusTodo, setStatusTodo] = useState('All');
 
-  return <TodoContext.Provider value={{ todos, setTodos, todoInput, setTodoInput, todoEdit, setTodoEdit, isEdit, setIsEdit, isDelete, setIsDelete }}>{children}</TodoContext.Provider>;
+  return <TodoContext.Provider value={{ todos, setTodos, todoInput, setTodoInput, todoEdit, setTodoEdit, isEdit, setIsEdit, statusTodo, setStatusTodo }}>{children}</TodoContext.Provider>;
 }
 
 export default TodoProvider;

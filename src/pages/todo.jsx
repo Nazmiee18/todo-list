@@ -8,7 +8,6 @@ function Todo() {
     <div>
       <h1>What's the plan for today?</h1>
       <TodoInput></TodoInput>
-      <TodoFilter></TodoFilter>
       <TodoList></TodoList>
     </div>
   );
