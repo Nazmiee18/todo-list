@@ -31,18 +31,24 @@ function TodoList() {
   return (
     <div>
       <div>
-        <button onClick={() => setStatusTodo('All')}>All</button>
-        <button onClick={() => setStatusTodo('Active')}>Active</button>
-        <button onClick={() => setStatusTodo('Completed')}>Completed</button>
+        <button onClick={() => setStatusTodo('All')} className="border btn btn-neutral px-5 rounded-xl my-3">
+          All
+        </button>
+        <button onClick={() => setStatusTodo('Active')} className="border btn btn-neutral px-5 rounded-xl my-3 mx-3">
+          Active
+        </button>
+        <button onClick={() => setStatusTodo('Completed')} className="border btn btn-neutral px-5 rounded-xl my-3">
+          Completed
+        </button>
       </div>
       {statusTodo === 'All' ? (
         todos.map((todo, index) => (
-          <div key={todo.id} className="flex gap-5">
+          <div key={todo.id} className="flex justify-between">
             <span onClick={() => handleStatus(index)} className={todo.status ? 'line-through' : ''}>
               {todo.value}
             </span>
             <div>
-              <button onClick={() => handleEdit(todo)}>
+              <button onClick={() => handleEdit(todo)} className="mx-3">
                 <FaEdit />
               </button>
               <button onClick={() => handleDelete(todo.id)}>
@@ -58,12 +64,12 @@ function TodoList() {
         todos
           .filter((todoActive) => !todoActive.status)
           .map((todo, index) => (
-            <div key={todo.id} className="flex gap-5">
+            <div key={todo.id} className="flex justify-between">
               <span onClick={() => handleStatus(index)} className={todo.status ? 'line-through' : ''}>
                 {todo.value}
               </span>
               <div>
-                <button onClick={() => handleEdit(todo)}>
+                <button onClick={() => handleEdit(todo)} className="mx-3">
                   <FaEdit />
                 </button>
                 <button>
@@ -79,12 +85,12 @@ function TodoList() {
         todos
           .filter((todoActive) => todoActive.status)
           .map((todo, index) => (
-            <div key={todo.id} className="flex gap-5">
+            <div key={todo.id} className="flex justify-between">
               <span onClick={() => handleStatus(index)} className={todo.status ? 'line-through' : ''}>
                 {todo.value}
               </span>
               <div>
-                <button onClick={() => handleEdit(todo)}>
+                <button onClick={() => handleEdit(todo)} className="mx-3">
                   <FaEdit />
                 </button>
                 <button>

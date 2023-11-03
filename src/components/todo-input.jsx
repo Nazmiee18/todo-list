@@ -28,9 +28,9 @@ function TodoInput() {
   };
 
   return (
-    <form className="flex">
-      <input type="text" className="border border-black" value={todoInput} onChange={(e) => setTodoInput(e.target.value)} />
-      <button className="p-2 border-solid border-black" onClick={handleClick}>
+    <form className="flex my-3">
+      <input type="text" placeholder="Input your todo" className="input input-bordered w-full max-w-xs" value={todoInput} onChange={(e) => setTodoInput(e.target.value)} />
+      <button className="px-5 ml-3 border border-solid border-black rounded-md btn btn-active btn-info" onClick={handleClick}>
         {isEdit ? 'Edit' : 'Add'}
       </button>
     </form>
